@@ -119,10 +119,19 @@ index 3d5c8d05..d158ce68 100644
      // platform
  #endif  // CHROME_BROWSER_HELIUM_FLAG_ENTRIES_H_
 diff --git a/chrome/browser/ui/BUILD.gn b/chrome/browser/ui/BUILD.gn
-index 2f361407..e0d3b9a5 100644
+index 2f361407..78609807 100644
 --- a/chrome/browser/ui/BUILD.gn
 +++ b/chrome/browser/ui/BUILD.gn
-@@ -3837,6 +3837,8 @@ static_library("ui") {
+@@ -657,6 +657,8 @@ if (!is_android) {
+       "//chrome/browser:browser_public_dependencies",
+     ]
+     deps = [
++      # Helium: Cmd/Ctrl+T opens the command bar.
++      "//chrome/browser/ui/views/helium/command_bar",
+       ":accelerator_table",
+       ":browser_actions",
+       ":browser_commands",
+@@ -3837,6 +3839,8 @@ static_library("ui") {
        "//chrome/browser/ui/views/location_bar/cookie_controls:impl",
        "//chrome/browser/ui/views/media_router",
        "//chrome/browser/ui/views/media_router:impl",
@@ -131,7 +140,7 @@ index 2f361407..e0d3b9a5 100644
        "//chrome/browser/ui/views/omnibox",
        "//chrome/browser/ui/views/omnibox:impl",
        "//chrome/browser/ui/views/overlay",
-@@ -4188,6 +4190,10 @@ static_library("ui") {
+@@ -4188,6 +4192,10 @@ static_library("ui") {
        # c/b/ui/views/frame/browser_view.h
        "//chrome/browser/ui/views/bookmarks/saved_tab_groups:impl",
  
